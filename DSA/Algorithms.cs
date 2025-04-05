@@ -43,5 +43,32 @@ namespace DSA
             array[index2] = temp;
         }
         #endregion
+
+
+        #region RemoveDuplicateCharacters
+        public static string RemoveDuplicateChars(string key)
+        {
+            string traversedChars = "";
+            foreach (char individualChar in key)
+            {
+                if (IsCharUnique(traversedChars, individualChar))
+                {
+                    traversedChars = AppendChar(traversedChars, individualChar);
+                }
+            }
+            return traversedChars;
+        }
+
+        private static bool IsCharUnique(string traversedChars, char individualChar)
+        {
+            return traversedChars.IndexOf(individualChar) == -1;
+        }
+
+        private static string AppendChar(string traversedChars, char individualChar)
+        {
+            return traversedChars + individualChar;
+        }
+        #endregion
+
     }
 }
