@@ -8,7 +8,7 @@ BubbleSort();
 
 #endregion
 
-#region executableFunc
+#region FunctionExecuted
 static void BubbleSort()
 {
     Console.WriteLine("executing BubbleSort Demo with an Example:");
