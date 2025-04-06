@@ -1,5 +1,8 @@
 using DSA;
+using NUnit.Framework.Legacy;
 using System.Collections;
+
+
 
 namespace TestDSA
 {
@@ -17,6 +20,9 @@ namespace TestDSA
         {
         }
 
+        #region BubbleSort Algorithm Unit test case scenarios 
+
+       
         public static IEnumerable BubbleSortTestCases
         {
             get
@@ -39,5 +45,38 @@ namespace TestDSA
             // Assert
             CollectionAssert.AreEqual(expectedSortedArray, sortedArray);
         }
+
+        #endregion
+
+        #region removeDuplicateChar unit test case scenarios     
+
+        public static IEnumerable RemoveDuplicateCharsTestCases
+        {
+            get
+            {
+                yield return new TestCaseData("hello", "helo");
+                yield return new TestCaseData("world", "world");
+                yield return new TestCaseData("aabbcc", "abc");
+                yield return new TestCaseData("abcabc", "abc");
+                yield return new TestCaseData("", "");
+                yield return new TestCaseData("a", "a");
+                yield return new TestCaseData("Mississippi", "Misp");
+                yield return new TestCaseData("voodoo", "vod");
+                yield return new TestCaseData("aa", "a");
+            }
+        }
+
+
+        [Test, TestCaseSource(nameof(RemoveDuplicateCharsTestCases))]
+        public void RemoveDuplicateChars_RemovesDuplicatesCorrectly(string input, string expected)
+        {
+            // Act
+            string result = Algorithms.RemoveDuplicateChars(input);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+        #endregion
+
     }
 }
