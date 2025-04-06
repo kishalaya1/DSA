@@ -78,5 +78,49 @@ namespace TestDSA
         }
         #endregion
 
+        #region AreAnagrams unit test case scenarios
+
+        public struct AnagramTestCase
+        {
+            public string FirstWord { get; }
+            public string SecondWord { get; }
+            public bool Expected { get; }
+
+            public AnagramTestCase(string firstWord, string secondWord, bool expected)
+            {
+                FirstWord = firstWord;
+                SecondWord = secondWord;
+                Expected = expected;
+            }
+        }
+
+        public static IEnumerable AreAnagramsTestCases
+        {
+            get
+            {
+                yield return new TestCaseData(new AnagramTestCase("listen", "silent", true));
+                yield return new TestCaseData(new AnagramTestCase("triangle", "integral", true));
+                yield return new TestCaseData(new AnagramTestCase("apple", "pale", false));
+                yield return new TestCaseData(new AnagramTestCase("rat", "car", false));
+                yield return new TestCaseData(new AnagramTestCase("night", "thing", true));
+                yield return new TestCaseData(new AnagramTestCase("dusty", "study", true));
+                yield return new TestCaseData(new AnagramTestCase("", "", false));
+                yield return new TestCaseData(new AnagramTestCase("a", "a", true));
+                yield return new TestCaseData(new AnagramTestCase("a", "b", false));
+                yield return new TestCaseData(new AnagramTestCase("rat", "rats", false));
+            }
+        }
+
+        [Test, TestCaseSource(nameof(AreAnagramsTestCases))]
+        public void AreAnagrams_DetectsAnagramsCorrectly(AnagramTestCase testCase)
+        {
+            // Act
+            bool result = Algorithms.AreAnagrams(testCase.FirstWord, testCase.SecondWord);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(testCase.Expected));
+        }
+
+        #endregion
     }
 }
