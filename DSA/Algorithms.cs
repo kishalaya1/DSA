@@ -107,5 +107,54 @@ namespace DSA
         }
         #endregion
 
+        #region Anagram detection
+        public static bool AreAnagrams(string firstWord, string secondWord)
+        {
+            bool areAnagrams = false;
+            if (!IsInputEmpty(firstWord, secondWord))
+            {
+                // clean and sort the characters of both words
+                var sortedWords = GetCleanSortedCharArrays(firstWord, secondWord);
+                // Compare the sorted character arrays
+                areAnagrams = AreBothCharArraysEqual(sortedWords);
+
+            }
+            return areAnagrams;
+        }
+
+        /// <summary>
+        /// this function compares the sorted character arrays of both words.
+        /// </summary>
+        /// <param name="sortedTuple"></param>
+        /// <returns></returns>
+        private static bool AreBothCharArraysEqual((char[] firstSorted, char[] secondSorted) sortedTuple)
+        {
+            return string.Equals(new string(sortedTuple.firstSorted), new string(sortedTuple.secondSorted), StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static bool IsInputEmpty(string firstWord, string secondWord)
+        {
+            return string.IsNullOrEmpty(firstWord) || string.IsNullOrEmpty(secondWord);
+        }
+
+        /// <summary>
+        /// This function trims and sorts the characters of both words and returns them as a tuple.
+        /// </summary>
+        /// <param name="firstWord"></param>
+        /// <param name="secondWord"></param>
+        /// <returns></returns>
+        public static (char[] firstSorted, char[] secondSorted) GetCleanSortedCharArrays(string firstWord, string secondWord)
+        {
+            char[] firstWordChars = firstWord.Trim().ToUpper().ToCharArray();
+            char[] secondWordChars = secondWord.Trim().ToUpper().ToCharArray();
+
+            Array.Sort(firstWordChars);
+            Array.Sort(secondWordChars);
+
+            return (firstWordChars, secondWordChars);
+        }
+
+
+        #endregion
     }
 }

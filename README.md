@@ -3,3 +3,4 @@ This is my personal project for Data Structures and Algorithms in C#.This contai
 The list of algorithms and problems are as follows:
 1. Bubble Sort
 2. Remove duplicate characters from string
+3. Check if two words are anagrams
