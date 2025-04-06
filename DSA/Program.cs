@@ -5,8 +5,8 @@ Console.WriteLine("Hello, World!");
 
 #region executable Func
 //BubbleSort();
-RemoveDuplicateCharacters();
-
+//RemoveDuplicateCharacters();
+CheckWordsBeingAnagrams();
 #endregion
 
 #region Function Executed
@@ -31,9 +31,20 @@ static void RemoveDuplicateCharacters()
     string cleanedWord = Algorithms.RemoveDuplicateChars(wordwithRepeatingChars);
 
     Console.WriteLine("word or string cleaned of duplicate characters : " + cleanedWord);
-    
+
     Console.ReadKey();
 }
+static void CheckWordsBeingAnagrams()
+{
+    Console.WriteLine("executing demo function to check if two words are Anagrams");
+    string firstWord = "Listen";
+    string secondWord = "Enlist";
 
+    Console.WriteLine("First word : " + firstWord);
+    Console.WriteLine("Second word : " + secondWord);
+    string areBothAnagrams = (Algorithms.AreAnagrams(firstWord, secondWord)) ? "Yes" : "No";
+    Console.WriteLine("Are both words Anagrams? : " + areBothAnagrams);
+    Console.ReadKey();
+}
 
 #endregion
