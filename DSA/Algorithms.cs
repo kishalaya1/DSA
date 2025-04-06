@@ -43,5 +43,69 @@ namespace DSA
             array[index2] = temp;
         }
         #endregion
+
+
+        #region RemoveDuplicateCharacters
+
+        /// <summary>
+        /// This function removes duplicate characters from a string.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        public static string RemoveDuplicateChars(string word)
+        {
+            string traversedChars = string.Empty;
+            if (!string.IsNullOrEmpty(word))
+            {
+                foreach (char individualChar in word)
+                {
+                    traversedChars = CleanAppendDistinctChars(traversedChars, individualChar);
+                }
+            }
+            return traversedChars;
+        }
+
+        /// <summary>
+        /// This function checks if the character is unique and appends it to the traversed characters string.
+        /// </summary>
+        /// <param name="traversedChars"></param>
+        /// <param name="individualChar"></param>
+        /// <returns></returns>
+        private static string CleanAppendDistinctChars(string traversedChars, char individualChar)
+        {
+            if (individualChar != ' ')
+            {
+                if (IsCharUnique(traversedChars, individualChar))
+                {
+                    traversedChars = AppendChar(traversedChars, individualChar);
+                }
+            }
+
+            return traversedChars;
+        }
+
+        /// <summary>
+        /// This function checks if the character is unique in the appended characters string.
+        /// </summary>
+        /// <param name="traversedChars"></param>
+        /// <param name="individualChar"></param>
+        /// <returns></returns>
+        private static bool IsCharUnique(string traversedChars, char individualChar)
+        {
+            return traversedChars.IndexOf(individualChar) == -1;
+        }
+
+        /// <summary>
+        /// This function appends the character to a string.
+        /// </summary>
+        /// <param name="traversedChars"></param>
+        /// <param name="individualChar"></param>
+        /// <returns></returns>
+        private static string AppendChar(string traversedChars, char individualChar)
+        {
+            return traversedChars + individualChar;
+        }
+        #endregion
+
     }
 }
