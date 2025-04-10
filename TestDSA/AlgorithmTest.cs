@@ -122,5 +122,37 @@ namespace TestDSA
         }
 
         #endregion
+
+        #region Palindrome unit test case scenarios
+
+        public static IEnumerable IsPalindromeTestCases
+        {
+            get
+            {
+                yield return new TestCaseData("racecar", true); // Palindrome
+                yield return new TestCaseData("RaceCar", true); // Case-insensitive palindrome
+                yield return new TestCaseData("hello", false);  // Not a palindrome
+                yield return new TestCaseData("A", true);       // Single character
+                yield return new TestCaseData("", true);        // Empty string
+                yield return new TestCaseData("madam", true);   // Palindrome
+                yield return new TestCaseData("Madam", true);   // Case-insensitive palindrome
+                yield return new TestCaseData("step on no pets", true); // Not ignoring spaces
+                yield return new TestCaseData("Malayalam", true);
+                yield return new TestCaseData("civic", true);
+                yield return new TestCaseData("hannah", true);
+                yield return new TestCaseData("tattarrattat", true);//longest palindrome in english
+            }
+        }
+
+        [Test, TestCaseSource(nameof(IsPalindromeTestCases))]
+        public void IsPalindrome_DetectsPalindromeCorrectly(string input, bool expected)
+        {
+            // Act
+            bool result = Algorithms.IsPalindrome(input);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+        #endregion
     }
 }

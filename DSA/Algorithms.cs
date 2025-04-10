@@ -156,5 +156,30 @@ namespace DSA
 
 
         #endregion
+
+        #region Palindrome Detection
+
+        public static bool IsPalindrome(string word)
+        {
+            int forwardCounter = 0;
+            int reverseCounter = word.Length - 1;
+
+            while (forwardCounter <= reverseCounter)
+            {
+                char forwardPosChar = word[forwardCounter];
+                char reversePosChar = word[reverseCounter];
+
+                if (char.ToLower(forwardPosChar) != char.ToLower(reversePosChar))
+                {
+                    return false;
+                }
+                forwardCounter++;
+                reverseCounter--;
+            }
+            return true;
+        }
+
+
+        #endregion
     }
 }
