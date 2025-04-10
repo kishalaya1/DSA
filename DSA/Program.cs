@@ -6,7 +6,9 @@ Console.WriteLine("Hello, World!");
 #region executable Func
 //BubbleSort();
 //RemoveDuplicateCharacters();
-CheckWordsBeingAnagrams();
+//CheckWordsBeingAnagrams();
+CheckWordBeingPalindrome();
+
 #endregion
 
 #region Function Executed
@@ -44,6 +46,16 @@ static void CheckWordsBeingAnagrams()
     Console.WriteLine("Second word : " + secondWord);
     string areBothAnagrams = (Algorithms.AreAnagrams(firstWord, secondWord)) ? "Yes" : "No";
     Console.WriteLine("Are both words Anagrams? : " + areBothAnagrams);
+    Console.ReadKey();
+}
+
+static void CheckWordBeingPalindrome()
+{
+    Console.WriteLine("executing demo function to check if a word is palindrome");
+    string sampleWord = "Malayalam"; 
+    Console.WriteLine("Sample word : " + sampleWord);
+    string isPalindrome = (Algorithms.IsPalindrome(sampleWord)) ? "Yes" : "No";
+    Console.WriteLine("Is the given word a Palindrome  ? : " + isPalindrome);
     Console.ReadKey();
 }
 
