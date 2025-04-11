@@ -24,7 +24,7 @@ namespace TestDSA
 
         #region BubbleSort Algorithm Unit test case scenarios 
 
-       
+
         public static IEnumerable BubbleSortTestCases
         {
             get
@@ -169,7 +169,7 @@ namespace TestDSA
                 yield return new TestCaseData("", true).SetName("EmptyString");// Empty string
                 yield return new TestCaseData("abcABC", false).SetName("CaseSensitiveDuplicates");  // Case-insensitive duplicates
                 yield return new TestCaseData("Heterogram", false).SetName("SimpleWordWithDuplicate");
-                yield return new TestCaseData("a!@#rb", true).SetName("SpecialCharacterUnique");               
+                yield return new TestCaseData("a!@#rb", true).SetName("SpecialCharacterUnique");
             }
         }
 
@@ -182,6 +182,27 @@ namespace TestDSA
             Assert.That(result, Is.EqualTo(expected));
         }
 
+        #endregion
+
+        #region GetAllSubstrings unit test case scenarios
+        public static IEnumerable GetAllSubstringsTestCases
+        {
+            get
+            {
+                yield return new TestCaseData("abc").Returns(new List<string> { "a", "ab", "abc", "b", "bc", "c" }).SetName("SubstringsOfABC");
+                yield return new TestCaseData("ab").Returns(new List<string> { "a", "ab", "b" }).SetName("SubstringsOfAB");
+                yield return new TestCaseData("a").Returns(new List<string> { "a" }).SetName("SubstringsOfa");
+                yield return new TestCaseData("").Returns(new List<string>()).SetName("SubstringsOfEmptyString");
+                yield return new TestCaseData("xyz").Returns(new List<string> { "x", "xy", "xyz", "y", "yz", "z" }).SetName("SubstringsOfxyz");
+            }
+        }
+
+
+        [Test, TestCaseSource(nameof(GetAllSubstringsTestCases))]
+        public List<string> GetAllSubstrings_ReturnsCorrectSubstrings(string word)
+        {
+            return Algo.GetAllSubstrings(word);            
+        }
         #endregion
     }
 }
