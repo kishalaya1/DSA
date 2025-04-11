@@ -12,7 +12,8 @@ Console.WriteLine("Hello, World!");
 //RemoveDuplicateCharacters();
 //CheckWordsBeingAnagrams();
 //CheckWordBeingPalindrome();
-CheckWordBeingHeterogram();
+//CheckWordBeingHeterogram();
+GetallSubstrings();
 
 #endregion
 
@@ -70,6 +71,20 @@ static void CheckWordBeingHeterogram()
     Console.WriteLine("Sample word : " + sampleWord);
     string isPalindrome = (Algo.IsHeterogram(sampleWord)) ? "Yes" : "No";
     Console.WriteLine("Is the given word a Heterogram  ? : " + isPalindrome);
+    Console.ReadKey();
+}
+static void GetallSubstrings()
+{
+    Console.WriteLine("executing demo function to get all substrings from a word");
+    string sampleWord = "abc";
+    Console.WriteLine("Sample word : " + sampleWord);
+    var lstStrings = Algo.GetAllSubstrings(sampleWord);
+    Console.WriteLine("All substrings of the word are as follows : ");
+    foreach (var word in lstStrings)
+    {
+        Console.WriteLine(word);
+    }
+  
     Console.ReadKey();
 }
 

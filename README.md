@@ -6,3 +6,4 @@ The list of algorithms and problems are as follows:
 3. Check if two words are anagrams
 4. Check if a word is a palindrome 
 5. Check if a word has unique characters - Heterogram 
+6. Get all substrings from a word
