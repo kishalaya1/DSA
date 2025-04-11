@@ -11,7 +11,8 @@ Console.WriteLine("Hello, World!");
 //BubbleSort();
 //RemoveDuplicateCharacters();
 //CheckWordsBeingAnagrams();
-CheckWordBeingPalindrome();
+//CheckWordBeingPalindrome();
+CheckWordBeingHeterogram();
 
 #endregion
 
@@ -60,6 +61,15 @@ static void CheckWordBeingPalindrome()
     Console.WriteLine("Sample word : " + sampleWord);
     string isPalindrome = (Algo.IsPalindrome(sampleWord)) ? "Yes" : "No";
     Console.WriteLine("Is the given word a Palindrome  ? : " + isPalindrome);
+    Console.ReadKey();
+}
+static void CheckWordBeingHeterogram()
+{
+    Console.WriteLine("executing demo function to check if a word has all unique characters(Heterogram)");
+    string sampleWord = "abcdef";
+    Console.WriteLine("Sample word : " + sampleWord);
+    string isPalindrome = (Algo.IsHeterogram(sampleWord)) ? "Yes" : "No";
+    Console.WriteLine("Is the given word a Heterogram  ? : " + isPalindrome);
     Console.ReadKey();
 }
 

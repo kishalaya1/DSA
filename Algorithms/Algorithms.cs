@@ -181,5 +181,31 @@ namespace Algorithms
 
 
         #endregion
+
+        #region Heterogram Detection
+
+        /// <summary>
+        /// This function checks if a word has all unique characters.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        public static bool IsHeterogram(string word)
+        {
+            if (!string.IsNullOrEmpty(word))
+            {
+                HashSet<char> charsInWord = new HashSet<char>();
+                foreach (char c in word.ToLower())
+                {
+                    if (charsInWord.Contains(c))
+                    {
+                        return false; // Duplicate character found
+                    }
+                    charsInWord.Add(c);
+                }
+            }
+            return true; // No duplicates found
+        }
+        #endregion
+
     }
 }
