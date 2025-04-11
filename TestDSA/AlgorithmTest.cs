@@ -230,5 +230,41 @@ namespace TestDSA
         }
 
         #endregion
+
+        #region GetHCF unit test case scenarios
+
+        public static IEnumerable GetHCFTestCases
+        {
+            get
+            {
+                // Test cases for two numbers
+                yield return new TestCaseData(new int[] { 48, 18 }, 6).SetName("HCFOfTwoNumbers");
+                yield return new TestCaseData(new int[] { 7, 13 }, 1).SetName("HCFOfCoPrimeNumbers");
+                yield return new TestCaseData(new int[] { 0, 18 }, 18).SetName("HCFWithZero");
+                yield return new TestCaseData(new int[] { 0, 0 }, 0).SetName("HCFOfTwoZeros");
+
+                // Test cases for multiple numbers
+                yield return new TestCaseData(new int[] { 48, 18, 30 }, 6).SetName("HCFOfThreeNumbers");
+                yield return new TestCaseData(new int[] { 12, 15, 21 }, 3).SetName("HCFOfThreeNumbersWithCommonFactor");
+                yield return new TestCaseData(new int[] { 8, 16, 32 }, 8).SetName("HCFOfPowersOfTwo");
+                yield return new TestCaseData(new int[] { 1, 1, 1 }, 1).SetName("HCFOfAllOnes");
+
+                // Edge cases
+                yield return new TestCaseData(new int[] { 1, 0 }, 1).SetName("HCFOfOneAndZero");
+                yield return new TestCaseData(new int[] { 100 }, 100).SetName("HCFOfSingleNumber");
+            }
+        }
+
+        [Test, TestCaseSource(nameof(GetHCFTestCases))]
+        public void GetHCF_ReturnsCorrectHCF(int[] numbers, int expectedHCF)
+        {
+            // Act
+            int result = Algo.GetHCFOfNos(numbers);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expectedHCF));
+        }
+
+        #endregion
     }
 }
