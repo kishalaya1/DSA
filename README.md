@@ -8,3 +8,4 @@ The list of algorithms and problems are as follows:
 5. Check if a word has unique characters - Heterogram 
 6. Get all substrings from a word
 7. Generate all factors of a number 
+8. HCF(Highest common factor) of an array of numbers

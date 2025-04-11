@@ -254,5 +254,45 @@ namespace Algorithms
 
         #endregion
 
+        #region HCF of a number
+
+        /// <summary>
+        /// This function calculates the HCF of an array of numbers.
+        /// </summary>
+        /// <param name="numbers">Array of integers</param>
+        /// <returns>HCF of the numbers</returns>
+        public static int GetHCFOfNos(params int[] numbers)
+        {
+            if (numbers.Any())
+            {
+                int hcf = numbers[0];
+                for (int i = 1; i < numbers.Length; i++)
+                {
+                    hcf = GetHCF(hcf, numbers[i]);
+                }
+                return hcf;
+            }
+            return 1;
+        }
+
+        /// <summary>
+        /// This function calculates the HCF (Highest Common Factor) of two numbers.
+        /// </summary>
+        /// <param name="a">First number</param>
+        /// <param name="b">Second number</param>
+        /// <returns>HCF of the two numbers</returns>
+        public static int GetHCF(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return Math.Abs(a); // Ensure the result is always positive
+        }
+
+        #endregion
+
     }
 }

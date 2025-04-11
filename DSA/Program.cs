@@ -14,7 +14,8 @@ Console.WriteLine("Hello, World!");
 //CheckWordBeingPalindrome();
 //CheckWordBeingHeterogram();
 //GetallSubstrings();
-DisplayFactors();
+//DisplayFactors();
+DisplayHCF();
 
 #endregion
 
@@ -102,5 +103,19 @@ static void DisplayFactors()
 
     Console.ReadKey();
 }
+static void DisplayHCF()
+{
+    Console.WriteLine("executing demo function to show HCF of a given array of numbers");
+    int[] arrNumbers = { 7, 49, 700 };
+    foreach (int no in arrNumbers)
+    {
+        Console.WriteLine(no);
+    }
+    int hcfNo = Algo.GetHCFOfNos(arrNumbers);
+    Console.WriteLine("The HCF is : ");
+    Console.WriteLine(hcfNo);  
+    Console.ReadKey();
+}
+
 
 #endregion
