@@ -278,18 +278,18 @@ namespace Algorithms
         /// <summary>
         /// This function calculates the HCF (Highest Common Factor) of two numbers.
         /// </summary>
-        /// <param name="a">First number</param>
-        /// <param name="b">Second number</param>
+        /// <param name="firstNo">First number</param>
+        /// <param name="secondNo">Second number</param>
         /// <returns>HCF of the two numbers</returns>
-        private static int GetHCF(int a, int b)
+        private static int GetHCF(int firstNo, int secondNo)
         {
-            while (b != 0)
+            while (secondNo != 0)
             {
-                int temp = b;
-                b = a % b;
-                a = temp;
+                int temp = secondNo;
+                secondNo = firstNo % secondNo;
+                firstNo = temp;
             }
-            return Math.Abs(a); // Ensure the result is always positive
+            return Math.Abs(firstNo); // Ensure the result is always positive
         }
 
         #endregion
