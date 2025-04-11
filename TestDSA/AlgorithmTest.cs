@@ -156,5 +156,32 @@ namespace TestDSA
             Assert.That(result, Is.EqualTo(expected));
         }
         #endregion
+
+        #region Heterogram unit test case scenarios
+        public static IEnumerable IsHeterogramTestCases
+        {
+            get
+            {
+                yield return new TestCaseData("abcdefg", true).SetName("AllUniqueCharacters"); // All unique characters
+                yield return new TestCaseData("hello", false).SetName("DuplicateCharacters");
+                yield return new TestCaseData("world", true).SetName("UniqueRealEnglishWord");   // All unique characters
+                yield return new TestCaseData("aabbcc", false).SetName("DuplicateMultipleCharacters");  // Duplicates 'a', 'b', 'c'
+                yield return new TestCaseData("", true).SetName("EmptyString");// Empty string
+                yield return new TestCaseData("abcABC", false).SetName("CaseSensitiveDuplicates");  // Case-insensitive duplicates
+                yield return new TestCaseData("Heterogram", false).SetName("SimpleWordWithDuplicate");
+                yield return new TestCaseData("a!@#rb", true).SetName("SpecialCharacterUnique");               
+            }
+        }
+
+        [Test, TestCaseSource(nameof(IsHeterogramTestCases))]
+        public void IsHeterogram_DetectsHeterogramCorrectly(string word, bool expected)
+        {
+            // Act
+            bool result = Algo.IsHeterogram(word);
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        #endregion
     }
 }

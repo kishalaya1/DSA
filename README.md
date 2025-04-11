@@ -5,3 +5,4 @@ The list of algorithms and problems are as follows:
 2. Remove duplicate characters from string
 3. Check if two words are anagrams
 4. Check if a word is a palindrome 
+5. Check if a word has unique characters - Heterogram 
