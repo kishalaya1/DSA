@@ -207,5 +207,30 @@ namespace Algorithms
         }
         #endregion
 
+        #region Get All Subtstrings
+
+        /// <summary>
+        /// This function fetches all substrings from a word
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        public static List<string> GetAllSubstrings(string word)
+        {
+            List<string> subStrings = new List<string>();
+            if (!string.IsNullOrEmpty(word))
+            {
+                for (int i = 0; i < word.Length; i++)
+                {
+                    for (int j = i + 1; j <= word.Length; j++)
+                    {
+                        subStrings.Add(word.Substring(i, j - i));
+                    }
+                }
+            }
+            return subStrings;
+        }
+
+        #endregion
+
     }
 }
