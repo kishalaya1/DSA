@@ -7,3 +7,4 @@ The list of algorithms and problems are as follows:
 4. Check if a word is a palindrome 
 5. Check if a word has unique characters - Heterogram 
 6. Get all substrings from a word
+7. Generate all factors of a number 

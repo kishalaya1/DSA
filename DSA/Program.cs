@@ -13,7 +13,8 @@ Console.WriteLine("Hello, World!");
 //CheckWordsBeingAnagrams();
 //CheckWordBeingPalindrome();
 //CheckWordBeingHeterogram();
-GetallSubstrings();
+//GetallSubstrings();
+DisplayFactors();
 
 #endregion
 
@@ -58,7 +59,7 @@ static void CheckWordsBeingAnagrams()
 static void CheckWordBeingPalindrome()
 {
     Console.WriteLine("executing demo function to check if a word is palindrome");
-    string sampleWord = "Malayalam"; 
+    string sampleWord = "Malayalam";
     Console.WriteLine("Sample word : " + sampleWord);
     string isPalindrome = (Algo.IsPalindrome(sampleWord)) ? "Yes" : "No";
     Console.WriteLine("Is the given word a Palindrome  ? : " + isPalindrome);
@@ -84,7 +85,21 @@ static void GetallSubstrings()
     {
         Console.WriteLine(word);
     }
-  
+
+    Console.ReadKey();
+}
+static void DisplayFactors()
+{
+    Console.WriteLine("executing demo function to display factors of a number");
+    int sampleNumber = 1024;
+    Console.WriteLine("Sample number : " + sampleNumber);
+    var lstFactors = Algo.GetFactors(sampleNumber);
+    Console.WriteLine("The factors of the number are as follows : ");
+    foreach (var factor in lstFactors)
+    {
+        Console.WriteLine(factor);
+    }
+
     Console.ReadKey();
 }
 

@@ -11,7 +11,7 @@ namespace TestDSA
     public class AlgorithmTest
     {
         // This is a test class for the Algorithms class
-        // It contains unit tests for the BubbleSort method
+        // It contains unit tests for many algorithms
         // Add any necessary using directives here
         // Add any necessary attributes here
         // This method runs before each test in this class
@@ -203,6 +203,32 @@ namespace TestDSA
         {
             return Algo.GetAllSubstrings(word);            
         }
+        #endregion
+
+        #region Factors of number unit test case scenarios
+
+        public static IEnumerable GetFactorsTestCases
+        {
+            get
+            {
+                yield return new TestCaseData(12,new List<int> { 1, 2, 3, 4, 6, 12 });
+                yield return new TestCaseData(15, new List<int> { 1, 3, 5, 15 });
+                yield return new TestCaseData(28, new List<int> { 1, 2, 4, 7, 14, 28 });
+                yield return new TestCaseData(1,new List<int> { 1 });                
+                yield return new TestCaseData(0,new List<int>());
+            }
+        }
+
+        [Test, TestCaseSource(nameof(GetFactorsTestCases))]
+        public void GetFactors_ReturnsCorrectFactors(int number, List<int> expectedFactors)
+        {
+            // Act
+            List<int> result = Algo.GetFactors(number);
+            // Assert
+            Assert.That(result, Is.EqualTo(expectedFactors));
+            
+        }
+
         #endregion
     }
 }
