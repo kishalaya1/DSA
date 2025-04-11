@@ -1,5 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using DSA;
+using Algorithms;
+using Algo = Algorithms.Algorithms;
+using System.Collections.Generic;
+
+
 
 Console.WriteLine("Hello, World!");
 
@@ -19,7 +23,7 @@ static void BubbleSort()
     Console.WriteLine("Unsorted array:");
     Console.WriteLine(string.Join(", ", array));
 
-    int[] sortedArray = Algorithms.BubbleSort(array);
+    int[] sortedArray = Algo.BubbleSort(array);
 
     Console.WriteLine("Sorted array:");
     Console.WriteLine(string.Join(", ", sortedArray));
@@ -30,7 +34,7 @@ static void RemoveDuplicateCharacters()
     Console.WriteLine("Executing remove duplicate characters from a string");
     string wordwithRepeatingChars = "Mississippi";
     Console.WriteLine("Raw word with duplicate characters : " + wordwithRepeatingChars);
-    string cleanedWord = Algorithms.RemoveDuplicateChars(wordwithRepeatingChars);
+    string cleanedWord = Algo.RemoveDuplicateChars(wordwithRepeatingChars);
 
     Console.WriteLine("word or string cleaned of duplicate characters : " + cleanedWord);
 
@@ -44,7 +48,7 @@ static void CheckWordsBeingAnagrams()
 
     Console.WriteLine("First word : " + firstWord);
     Console.WriteLine("Second word : " + secondWord);
-    string areBothAnagrams = (Algorithms.AreAnagrams(firstWord, secondWord)) ? "Yes" : "No";
+    string areBothAnagrams = (Algo.AreAnagrams(firstWord, secondWord)) ? "Yes" : "No";
     Console.WriteLine("Are both words Anagrams? : " + areBothAnagrams);
     Console.ReadKey();
 }
@@ -54,7 +58,7 @@ static void CheckWordBeingPalindrome()
     Console.WriteLine("executing demo function to check if a word is palindrome");
     string sampleWord = "Malayalam"; 
     Console.WriteLine("Sample word : " + sampleWord);
-    string isPalindrome = (Algorithms.IsPalindrome(sampleWord)) ? "Yes" : "No";
+    string isPalindrome = (Algo.IsPalindrome(sampleWord)) ? "Yes" : "No";
     Console.WriteLine("Is the given word a Palindrome  ? : " + isPalindrome);
     Console.ReadKey();
 }
