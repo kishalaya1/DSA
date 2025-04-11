@@ -281,7 +281,7 @@ namespace Algorithms
         /// <param name="a">First number</param>
         /// <param name="b">Second number</param>
         /// <returns>HCF of the two numbers</returns>
-        public static int GetHCF(int a, int b)
+        private static int GetHCF(int a, int b)
         {
             while (b != 0)
             {
