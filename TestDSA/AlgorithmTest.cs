@@ -1,6 +1,8 @@
-using DSA;
+using Algorithms;
+using Algo = Algorithms.Algorithms;
 using NUnit.Framework.Legacy;
 using System.Collections;
+
 
 
 
@@ -40,7 +42,7 @@ namespace TestDSA
         public void BubbleSort_SortsArrayCorrectly(int[] unsortedArray, int[] expectedSortedArray)
         {
             // Act
-            int[] sortedArray = Algorithms.BubbleSort(unsortedArray);
+            int[] sortedArray = Algo.BubbleSort(unsortedArray);
 
             // Assert
             CollectionAssert.AreEqual(expectedSortedArray, sortedArray);
@@ -71,7 +73,7 @@ namespace TestDSA
         public void RemoveDuplicateChars_RemovesDuplicatesCorrectly(string input, string expected)
         {
             // Act
-            string result = Algorithms.RemoveDuplicateChars(input);
+            string result = Algo.RemoveDuplicateChars(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
@@ -115,7 +117,7 @@ namespace TestDSA
         public void AreAnagrams_DetectsAnagramsCorrectly(AnagramTestCase testCase)
         {
             // Act
-            bool result = Algorithms.AreAnagrams(testCase.FirstWord, testCase.SecondWord);
+            bool result = Algo.AreAnagrams(testCase.FirstWord, testCase.SecondWord);
 
             // Assert
             Assert.That(result, Is.EqualTo(testCase.Expected));
@@ -148,7 +150,7 @@ namespace TestDSA
         public void IsPalindrome_DetectsPalindromeCorrectly(string input, bool expected)
         {
             // Act
-            bool result = Algorithms.IsPalindrome(input);
+            bool result = Algo.IsPalindrome(input);
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSA", "DSA.csproj", "{100572A6-1CC8-4E30-B309-3248DB46315B}"
 EndProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDSA", "..\TestDSA\TestDSA.csproj", "{5408FE83-1526-476F-9EA5-4D80538D7A09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "..\Algorithms\Algorithms.csproj", "{CEAC4234-2C52-4F9A-BE49-8A0468C1F596}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{5408FE83-1526-476F-9EA5-4D80538D7A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5408FE83-1526-476F-9EA5-4D80538D7A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5408FE83-1526-476F-9EA5-4D80538D7A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEAC4234-2C52-4F9A-BE49-8A0468C1F596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEAC4234-2C52-4F9A-BE49-8A0468C1F596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEAC4234-2C52-4F9A-BE49-8A0468C1F596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEAC4234-2C52-4F9A-BE49-8A0468C1F596}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
