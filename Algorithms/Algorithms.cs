@@ -232,5 +232,27 @@ namespace Algorithms
 
         #endregion
 
+        #region Factors of a number
+
+        /// <summary>
+        /// This function returns the factors of a number.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static List<int> GetFactors(int number)
+        {
+            List<int> factors = new List<int>();
+            for (int i = 1; i <= number; i++)
+            {
+                if (number % i == 0)
+                {
+                    factors.Add(i);
+                }
+            }
+            return factors;
+        }
+
+        #endregion
+
     }
 }
