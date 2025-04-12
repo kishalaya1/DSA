@@ -18,8 +18,9 @@ functionMap.Add(6, GetallSubstrings);
 functionMap.Add(7, DisplayFactors);
 functionMap.Add(8, DisplayHCF);
 functionMap.Add(9, DisplayLCM);
+functionMap.Add(10, CheckArmstrongNo);
 
-string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF", "DisplayLCM" };
+string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF", "DisplayLCM", "CheckArmstrongNo" };
 Action[] selectedFuncs = {
     None,
     BubbleSort,
@@ -30,7 +31,8 @@ Action[] selectedFuncs = {
     GetallSubstrings,
     DisplayFactors,
     DisplayHCF,
-    DisplayLCM
+    DisplayLCM,
+    CheckArmstrongNo
 };
 
 #region executable Func
@@ -162,6 +164,16 @@ static void DisplayLCM()
     int lcmNo = Algo.GetHCFOfNos(arrNumbers);
     Console.WriteLine("The LCM is : ");
     Console.WriteLine(lcmNo);
+    Console.ReadKey();
+}
+
+static void CheckArmstrongNo()
+{
+    Console.WriteLine("executing demo function to check if a number is an armstrong no");
+    int sampleNo = 8208;
+    Console.WriteLine("Sample number : " + sampleNo);
+    string isArmstrongNo = (Algo.IsArmstrongNumber(sampleNo)) ? "Yes" : "No";
+    Console.WriteLine("Is the given number an Armstrong number? : " + isArmstrongNo);
     Console.ReadKey();
 }
 
