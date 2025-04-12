@@ -332,5 +332,33 @@ namespace Algorithms
 
         #endregion
 
+        #region Armstrong Number Detection
+
+        /// <summary>
+        /// This function checks if a number is an Armstrong number.
+        /// </summary>
+        /// <param name="number">The number to check</param>
+        /// <returns>True if the number is an Armstrong number, otherwise false</returns>
+        public static bool IsArmstrongNumber(int number)
+        {
+            if (number < 0)
+                return false; // Armstrong numbers are non-negative
+
+            int originalNumber = number;
+            int sum = 0;
+            int numberOfDigits = number.ToString().Length;
+
+            while (number > 0)
+            {
+                int digit = number % 10;
+                sum += (int)Math.Pow(digit, numberOfDigits);
+                number /= 10;
+            }
+
+            return sum == originalNumber;
+        }
+
+        #endregion
+
     }
 }
