@@ -5,21 +5,54 @@ using System.Collections.Generic;
 
 
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine(" Alas! projects were as simple as displaying Hello, World!");
+
+Dictionary<int, Action> functionMap = new Dictionary<int, Action>();
+functionMap.Add(0, None);
+functionMap.Add(1, BubbleSort);
+functionMap.Add(2, RemoveDuplicateCharacters);
+functionMap.Add(3, CheckWordsBeingAnagrams);
+functionMap.Add(4, CheckWordBeingPalindrome);
+functionMap.Add(5, CheckWordBeingHeterogram);
+functionMap.Add(6, GetallSubstrings);
+functionMap.Add(7, DisplayFactors);
+functionMap.Add(8, DisplayHCF);
+
+string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF" };
+Action[] selectedFuncs = {
+    None,
+    BubbleSort,
+    RemoveDuplicateCharacters,
+    CheckWordsBeingAnagrams,
+    CheckWordBeingPalindrome,
+    CheckWordBeingHeterogram,
+    GetallSubstrings,
+    DisplayFactors,
+    DisplayHCF
+};
 
 #region executable Func
-//BubbleSort();
-//RemoveDuplicateCharacters();
-//CheckWordsBeingAnagrams();
-//CheckWordBeingPalindrome();
-//CheckWordBeingHeterogram();
-//GetallSubstrings();
-//DisplayFactors();
-DisplayHCF();
+
+Default(selectedFuncs, functionMap, FuncNames);
 
 #endregion
 
 #region Function Executed
+static void Default(Action[] selectedFuncs, Dictionary<int, Action> functionMap, string[] funcNames)
+{
+    Console.WriteLine("Please select a no to execute the particualar algorithm example: ");
+    foreach (var func in functionMap)
+    {
+       Console.WriteLine($"{func.Key} : {funcNames[func.Key]}");
+    }   
+    int FunctionNo = Convert.ToInt32(Console.ReadLine());
+    selectedFuncs[FunctionNo]();
+}
+static void None()
+{
+    Console.WriteLine("No function selected to execute");
+    Console.ReadKey();
+}
 static void BubbleSort()
 {
     Console.WriteLine("executing BubbleSort Demo with an Example:");
