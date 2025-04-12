@@ -266,5 +266,41 @@ namespace TestDSA
         }
 
         #endregion
+
+        #region GetLCM unit test case scenarios 
+
+        public static IEnumerable GetLCMTestCases
+        {
+            get
+            {
+                // Test cases for two numbers
+                yield return new TestCaseData(new int[] { 4, 6 }, 12).SetName("LCMOfTwoNumbers");
+                yield return new TestCaseData(new int[] { 7, 13 }, 91).SetName("LCMOfCoPrimeNumbers");
+                yield return new TestCaseData(new int[] { 0, 18 }, 0).SetName("LCMWithZero");
+                yield return new TestCaseData(new int[] { 0, 0 }, 0).SetName("LCMOfTwoZeros");
+
+                // Test cases for multiple numbers
+                yield return new TestCaseData(new int[] { 4, 6, 8 }, 24).SetName("LCMOfThreeNumbers");
+                yield return new TestCaseData(new int[] { 12, 15, 20 }, 60).SetName("LCMOfThreeNumbersWithCommonFactor");
+                yield return new TestCaseData(new int[] { 8, 16, 32 }, 32).SetName("LCMOfPowersOfTwo");
+                yield return new TestCaseData(new int[] { 1, 1, 1 }, 1).SetName("LCMOfAllOnes");
+
+                // Edge cases
+                yield return new TestCaseData(new int[] { 1, 0 }, 0).SetName("LCMOfOneAndZero");
+                yield return new TestCaseData(new int[] { 100 }, 100).SetName("LCMOfSingleNumber");
+            }
+        }
+
+        [Test, TestCaseSource(nameof(GetLCMTestCases))]
+        public void GetLCM_ReturnsCorrectLCM(int[] numbers, int expectedLCM)
+        {
+            // Act
+            int result = Algo.GetLCMOfNos(numbers);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expectedLCM));
+        }
+
+        #endregion
     }
 }

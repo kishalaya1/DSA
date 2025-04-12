@@ -17,8 +17,9 @@ functionMap.Add(5, CheckWordBeingHeterogram);
 functionMap.Add(6, GetallSubstrings);
 functionMap.Add(7, DisplayFactors);
 functionMap.Add(8, DisplayHCF);
+functionMap.Add(9, DisplayLCM);
 
-string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF" };
+string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF", "DisplayLCM" };
 Action[] selectedFuncs = {
     None,
     BubbleSort,
@@ -28,7 +29,8 @@ Action[] selectedFuncs = {
     CheckWordBeingHeterogram,
     GetallSubstrings,
     DisplayFactors,
-    DisplayHCF
+    DisplayHCF,
+    DisplayLCM
 };
 
 #region executable Func
@@ -149,6 +151,18 @@ static void DisplayHCF()
     Console.WriteLine(hcfNo);  
     Console.ReadKey();
 }
-
+static void DisplayLCM()
+{
+    Console.WriteLine("executing demo function to show LCM of a given array of numbers");
+    int[] arrNumbers = { 2, 4, 6, 8 };
+    foreach (int no in arrNumbers)
+    {
+        Console.WriteLine(no);
+    }
+    int lcmNo = Algo.GetHCFOfNos(arrNumbers);
+    Console.WriteLine("The LCM is : ");
+    Console.WriteLine(lcmNo);
+    Console.ReadKey();
+}
 
 #endregion
