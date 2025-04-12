@@ -9,3 +9,4 @@ The list of algorithms and problems are as follows:
 6. Get all substrings from a word
 7. Generate all factors of a number 
 8. HCF(Highest common factor) of an array of numbers
+9. LCM(Least common multiple) of an array of numbers 

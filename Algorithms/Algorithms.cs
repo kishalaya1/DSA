@@ -294,5 +294,43 @@ namespace Algorithms
 
         #endregion
 
+        #region LCM of a list of number
+
+        /// <summary>
+        /// This function calculates the LCM (Least Common Multiple) of an array of numbers.
+        /// </summary>
+        /// <param name="numbers">Array of integers</param>
+        /// <returns>LCM of the numbers</returns>
+        public static int GetLCMOfNos(params int[] numbers)
+        {
+            if (numbers.Any())
+            {
+                int lcm = numbers[0];
+                for (int i = 1; i < numbers.Length; i++)
+                {
+                    lcm = GetLCM(lcm, numbers[i]);
+                }
+                return lcm;
+            }
+            return 1;
+        }
+
+        /// <summary>
+        /// This function calculates the LCM of two numbers using the formula:
+        /// LCM(a, b) = (a * b) / HCF(a, b)
+        /// </summary>
+        /// <param name="a">First number</param>
+        /// <param name="b">Second number</param>
+        /// <returns>LCM of the two numbers</returns>
+        private static int GetLCM(int a, int b)
+        {
+            if (a == 0 || b == 0)
+                return 0; // LCM of any number with 0 is 0
+
+            return Math.Abs(a * b) / GetHCF(a, b);
+        }
+
+        #endregion
+
     }
 }
