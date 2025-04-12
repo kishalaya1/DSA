@@ -302,5 +302,40 @@ namespace TestDSA
         }
 
         #endregion
+
+        #region Armstrong Number unit test case scenarios
+
+        public static IEnumerable IsArmstrongNumberTestCases
+        {
+            get
+            {
+                // Armstrong numbers
+                yield return new TestCaseData(153, true).SetName("ArmstrongNumber_153");
+                yield return new TestCaseData(9474, true).SetName("ArmstrongNumber_9474");
+                yield return new TestCaseData(9475, false).SetName("NonArmstrongNumber_9475");
+                yield return new TestCaseData(0, true).SetName("ArmstrongNumber_0");
+                yield return new TestCaseData(1, true).SetName("ArmstrongNumber_1");
+
+                // Non-Armstrong numbers
+                yield return new TestCaseData(123, false).SetName("NonArmstrongNumber_123");
+                yield return new TestCaseData(10, false).SetName("NonArmstrongNumber_10");
+
+                // Edge cases
+                yield return new TestCaseData(-153, false).SetName("NegativeNumber_NonArmstrong");
+            }
+        }
+
+        [Test, TestCaseSource(nameof(IsArmstrongNumberTestCases))]
+        public void IsArmstrongNumber_DetectsCorrectly(int number, bool expected)
+        {
+            // Act
+            bool result = Algo.IsArmstrongNumber(number);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        #endregion
+
     }
 }
