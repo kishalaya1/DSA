@@ -312,6 +312,7 @@ namespace TestDSA
                 // Armstrong numbers
                 yield return new TestCaseData(153, true).SetName("ArmstrongNumber_153");
                 yield return new TestCaseData(9474, true).SetName("ArmstrongNumber_9474");
+                yield return new TestCaseData(8208, true).SetName("ArmstrongNumber_8208");
                 yield return new TestCaseData(9475, false).SetName("NonArmstrongNumber_9475");
                 yield return new TestCaseData(0, true).SetName("ArmstrongNumber_0");
                 yield return new TestCaseData(1, true).SetName("ArmstrongNumber_1");
@@ -321,7 +322,8 @@ namespace TestDSA
                 yield return new TestCaseData(10, false).SetName("NonArmstrongNumber_10");
 
                 // Edge cases
-                yield return new TestCaseData(-153, false).SetName("NegativeNumber_NonArmstrong");
+                yield return new TestCaseData(-153, false).SetName("NegativeNumber_NonArmstrong_3_digit");
+                yield return new TestCaseData(-8208, false).SetName("NegativeNumber_NonArmstrong_4_digit");
             }
         }
 
