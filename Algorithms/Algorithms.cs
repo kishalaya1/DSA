@@ -319,15 +319,15 @@ namespace Algorithms
         /// This function calculates the LCM of two numbers using the formula:
         /// LCM(a, b) = (a * b) / HCF(a, b)
         /// </summary>
-        /// <param name="a">First number</param>
-        /// <param name="b">Second number</param>
+        /// <param name="firstNo">First number</param>
+        /// <param name="secondNo">Second number</param>
         /// <returns>LCM of the two numbers</returns>
-        private static int GetLCM(int a, int b)
+        private static int GetLCM(int firstNo, int secondNo)
         {
-            if (a == 0 || b == 0)
+            if (firstNo == 0 || secondNo == 0)
                 return 0; // LCM of any number with 0 is 0
 
-            return Math.Abs(a * b) / GetHCF(a, b);
+            return Math.Abs(firstNo * secondNo) / GetHCF(firstNo, secondNo);
         }
 
         #endregion
