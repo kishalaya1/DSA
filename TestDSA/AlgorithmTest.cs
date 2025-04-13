@@ -322,8 +322,8 @@ namespace TestDSA
                 yield return new TestCaseData(10, false).SetName("NonArmstrongNumber_10");
 
                 // Edge cases
-                yield return new TestCaseData(-153, false).SetName("NegativeNumber_NonArmstrong_3_digit");
-                yield return new TestCaseData(-8208, false).SetName("NegativeNumber_NonArmstrong_4_digit");
+                yield return new TestCaseData(-153, false).SetName("NonArmstrong_NegativeNumber_3_digit");
+                yield return new TestCaseData(-8208, false).SetName("NonArmstrong_NegativeNumber_4_digit");
             }
         }
 

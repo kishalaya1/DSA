@@ -254,7 +254,7 @@ namespace Algorithms
 
         #endregion
 
-        #region HCF of a number
+        #region HCF of a list of number
 
         /// <summary>
         /// This function calculates the HCF of an array of numbers.
