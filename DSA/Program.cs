@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 
 
-Console.WriteLine(" Alas! projects were as simple as displaying Hello, World!");
+Console.WriteLine("Alas, if only projects were as simple as displaying 'Hello, World!");
 
 Dictionary<int, Action> functionMap = new Dictionary<int, Action>();
 functionMap.Add(0, None);
