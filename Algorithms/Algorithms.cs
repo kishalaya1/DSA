@@ -54,57 +54,24 @@ namespace Algorithms
         /// <returns></returns>
         public static string RemoveDuplicateChars(string word)
         {
-            string traversedChars = string.Empty;
+            HashSet<char> uniqueChars = new HashSet<char>();
+            //hashset has been used for reducing time complexity to O(1)
+            StringBuilder traversedChars = new StringBuilder();
             if (!string.IsNullOrEmpty(word))
             {
                 foreach (char individualChar in word)
                 {
-                    traversedChars = CleanAppendDistinctChars(traversedChars, individualChar);
+                    if (!uniqueChars.Contains(individualChar))
+                    {
+                        uniqueChars.Add(individualChar);
+                        traversedChars.Append(individualChar);
+                    }
                 }
             }
-            return traversedChars;
+            return traversedChars.ToString();
         }
 
-        /// <summary>
-        /// This function checks if the character is unique and appends it to the traversed characters string.
-        /// </summary>
-        /// <param name="traversedChars"></param>
-        /// <param name="individualChar"></param>
-        /// <returns></returns>
-        private static string CleanAppendDistinctChars(string traversedChars, char individualChar)
-        {
-            if (individualChar != ' ')
-            {
-                if (IsCharUnique(traversedChars, individualChar))
-                {
-                    traversedChars = AppendChar(traversedChars, individualChar);
-                }
-            }
-
-            return traversedChars;
-        }
-
-        /// <summary>
-        /// This function checks if the character is unique in the appended characters string.
-        /// </summary>
-        /// <param name="traversedChars"></param>
-        /// <param name="individualChar"></param>
-        /// <returns></returns>
-        private static bool IsCharUnique(string traversedChars, char individualChar)
-        {
-            return traversedChars.IndexOf(individualChar) == -1;
-        }
-
-        /// <summary>
-        /// This function appends the character to a string.
-        /// </summary>
-        /// <param name="traversedChars"></param>
-        /// <param name="individualChar"></param>
-        /// <returns></returns>
-        private static string AppendChar(string traversedChars, char individualChar)
-        {
-            return traversedChars + individualChar;
-        }
+       
         #endregion
 
         #region Anagram detection
