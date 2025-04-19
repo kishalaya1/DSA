@@ -209,13 +209,18 @@ namespace Algorithms
         public static List<int> GetFactors(int number)
         {
             List<int> factors = new List<int>();
-            for (int i = 1; i <= number; i++)
+            double factorRange = Math.Sqrt(number);
+            for (int i = 1; i <= factorRange; i++)
             {
                 if (number % i == 0)
                 {
                     factors.Add(i);
+                    if (i != number / i) // Avoid adding the square root twice
+                    {
+                        factors.Add(number / i);
+                    }
                 }
-            }
+            }            
             return factors;
         }
 
