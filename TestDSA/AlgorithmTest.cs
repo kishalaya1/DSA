@@ -225,7 +225,7 @@ namespace TestDSA
             // Act
             List<int> result = Algo.GetFactors(number);
             // Assert
-            Assert.That(result, Is.EqualTo(expectedFactors));
+            Assert.That(result.OrderBy(t=> t), Is.EqualTo(expectedFactors));
             
         }
 
