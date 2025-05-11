@@ -19,8 +19,9 @@ functionMap.Add(7, DisplayFactors);
 functionMap.Add(8, DisplayHCF);
 functionMap.Add(9, DisplayLCM);
 functionMap.Add(10, CheckArmstrongNo);
+functionMap.Add(11, CheckValidLuhnNo);
 
-string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF", "DisplayLCM", "CheckArmstrongNo" };
+string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF", "DisplayLCM", "CheckArmstrongNo", "CheckValidLuhnNo" };
 Action[] selectedFuncs = {
     None,
     BubbleSort,
@@ -32,7 +33,8 @@ Action[] selectedFuncs = {
     DisplayFactors,
     DisplayHCF,
     DisplayLCM,
-    CheckArmstrongNo
+    CheckArmstrongNo,
+    CheckValidLuhnNo
 };
 
 #region executable Func
@@ -176,5 +178,13 @@ static void CheckArmstrongNo()
     Console.WriteLine("Is the given number an Armstrong number? : " + isArmstrongNo);
     Console.ReadKey();
 }
-
+static void CheckValidLuhnNo()
+{
+    Console.WriteLine("executing demo function to check if the credit card no is valid ");
+    long sampleCCNo = 4532015112830366L;
+    Console.WriteLine("Sample number : " + sampleCCNo);
+    string isValidLuhnNo = (SpecialAlgorithms.IsValidLuhn(sampleCCNo)) ? "Yes" : "No";
+    Console.WriteLine("Is the given number a valid credit card no ? : " + isValidLuhnNo);
+    Console.ReadKey();
+}
 #endregion
