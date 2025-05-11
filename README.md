@@ -13,4 +13,5 @@ The list of algorithms and problems are as follows:
 10. Armstrong number 
 
 The list of special algortihms are as follows:
+
 1.Luhn's Algorithm 
