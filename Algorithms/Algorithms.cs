@@ -318,16 +318,31 @@ namespace Algorithms
 
             int originalNumber = number;
             int sum = 0;
-            int numberOfDigits = number.ToString().Length;
+            int numberOfDigits = (int)Math.Log10(number) + 1;
 
             while (number > 0)
             {
                 int digit = number % 10;
-                sum += (int)Math.Pow(digit, numberOfDigits);
+                sum += Power(digit, numberOfDigits);
                 number /= 10;
             }
 
             return sum == originalNumber;
+        }
+
+        /// <summary>
+        /// This function calculates the power of a base number raised to an exponent
+        /// equivalent to Math.Pow but implemented manually to improve performance.
+        /// </summary>
+        /// <param name="baseNo"></param>
+        /// <param name="exponent"></param>
+        /// <returns></returns>
+        private static int Power(int baseNo, int exponent)
+        {
+            int exponentiationResult = 1;
+            while (exponent-- > 0)
+                exponentiationResult *= baseNo;
+            return exponentiationResult;
         }
 
         #endregion
