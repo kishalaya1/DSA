@@ -71,7 +71,7 @@ namespace Algorithms
             return traversedChars.ToString();
         }
 
-       
+
         #endregion
 
         #region Anagram detection
@@ -220,7 +220,7 @@ namespace Algorithms
                         factors.Add(number / i);
                     }
                 }
-            }            
+            }
             return factors;
         }
 
@@ -343,6 +343,32 @@ namespace Algorithms
             while (exponent-- > 0)
                 exponentiationResult *= baseNo;
             return exponentiationResult;
+        }
+
+        #endregion
+
+        #region Power Of Number Detection 
+
+        /// <summary>
+        /// Determines whether the specified number is a power of the given base.
+        /// </summary>        
+        /// <param name="number">The number to check</param>
+        /// <param name="baseNo">The base number</param>
+        /// <returns>True if the number is a power of the baseNo, otherwise false</returns>
+        public static bool IsPowerOf(int number, int baseNo)
+        {
+            if (baseNo <= 1 || number < 1)
+            {
+                return false; // Invalid input
+            }
+
+            int current = number;
+            while (current % baseNo == 0)
+            {
+                current /= baseNo;
+
+            }
+            return current == 1;
         }
 
         #endregion
