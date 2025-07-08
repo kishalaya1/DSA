@@ -339,5 +339,34 @@ namespace TestDSA
 
         #endregion
 
+        #region IsPowerOf unit test case scenarios
+
+        public static IEnumerable IsPowerOfTestCases
+        {
+            get
+            {
+                yield return new TestCaseData(1, 2, true).SetName("1_IsPowerOf_2");
+                yield return new TestCaseData(2, 2, true).SetName("2_IsPowerOf_2");
+                yield return new TestCaseData(4, 2, true).SetName("4_IsPowerOf_2");
+                yield return new TestCaseData(8, 2, true).SetName("8_IsPowerOf_2");
+                yield return new TestCaseData(3, 2, false).SetName("3_IsNotPowerOf_2");
+                yield return new TestCaseData(16, 4, true).SetName("16_IsPowerOf_4");
+                yield return new TestCaseData(27, 3, true).SetName("27_IsPowerOf_3");
+                yield return new TestCaseData(729, 3, true).SetName("729_IsPowerOf_3");
+                yield return new TestCaseData(0, 2, false).SetName("0_IsNotPowerOfAnyNumber");
+                yield return new TestCaseData(-8, 2, false).SetName("NegativeNumberIsNotPowerOfAnyNumber");
+            }
+        }
+          
+        [Test, TestCaseSource(nameof(IsPowerOfTestCases))]
+        public void IsPowerOf_ReturnsCorrectResult(int number, int baseNumber, bool expected)
+        {
+            // Act
+            bool result = Algo.IsPowerOf(number, baseNumber);
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        #endregion
     }
 }

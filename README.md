@@ -11,6 +11,7 @@ The list of algorithms and problems are as follows:
 8. HCF(Highest common factor) of an array of numbers
 9. LCM(Least common multiple) of an array of numbers 
 10. Armstrong number 
+11. Check if a number is power of another number
 
 The list of special algortihms are as follows:
 
