@@ -20,8 +20,9 @@ functionMap.Add(8, DisplayHCF);
 functionMap.Add(9, DisplayLCM);
 functionMap.Add(10, CheckArmstrongNo);
 functionMap.Add(11, CheckValidLuhnNo);
+functionMap.Add(12, CheckIsPower);
 
-string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF", "DisplayLCM", "CheckArmstrongNo", "CheckValidLuhnNo" };
+string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF", "DisplayLCM", "CheckArmstrongNo", "CheckValidLuhnNo","CheckIsPower" };
 Action[] selectedFuncs = {
     None,
     BubbleSort,
@@ -34,7 +35,8 @@ Action[] selectedFuncs = {
     DisplayHCF,
     DisplayLCM,
     CheckArmstrongNo,
-    CheckValidLuhnNo
+    CheckValidLuhnNo,
+    CheckIsPower
 };
 
 #region executable Func
@@ -185,6 +187,17 @@ static void CheckValidLuhnNo()
     Console.WriteLine("Sample number : " + sampleCCNo);
     string isValidLuhnNo = (SpecialAlgorithms.IsValidLuhn(sampleCCNo)) ? "Yes" : "No";
     Console.WriteLine("Is the given number a valid credit card no ? : " + isValidLuhnNo);
+    Console.ReadKey();
+}
+static void CheckIsPower()
+{     
+    Console.WriteLine("executing demo function to check if a number is a power of another number");
+    int number = 27;
+    int baseNo = 3;
+    Console.WriteLine($"Number: {number} ");
+    Console.WriteLine($"Base: {baseNo} ");
+    bool isPower = Algo.IsPowerOf(number, baseNo);
+    Console.WriteLine($"Is {number} a power of {baseNo}? : {(isPower ? "Yes" : "No")}");
     Console.ReadKey();
 }
 #endregion
