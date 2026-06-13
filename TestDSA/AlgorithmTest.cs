@@ -3,9 +3,6 @@ using Algo = Algorithms.Algorithms;
 using NUnit.Framework.Legacy;
 using System.Collections;
 
-
-
-
 namespace TestDSA
 {
     public class AlgorithmTest
@@ -45,7 +42,7 @@ namespace TestDSA
             int[] sortedArray = Algo.BubbleSort(unsortedArray);
 
             // Assert
-            CollectionAssert.AreEqual(expectedSortedArray, sortedArray);
+            Assert.That(sortedArray, Is.EqualTo(expectedSortedArray));
         }
 
         #endregion
