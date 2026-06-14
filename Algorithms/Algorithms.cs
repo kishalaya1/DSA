@@ -174,6 +174,33 @@ namespace Algorithms
         }
         #endregion
 
+        #region Pangram Detections
+
+        /// <summary>
+        /// This function checks if a sentence contains all 
+        /// letters of the alphabetat least once. Case is ignored.
+        /// </summary>
+        /// <param name="sentence">The sentence to check</param>
+        /// <returns>True if the sentence is a pangram, otherwise false</returns>
+        public static bool IsPangram(string sentence)
+        {
+            if (!string.IsNullOrEmpty(sentence))
+            {
+                HashSet<char> alphabetSet = new HashSet<char>();
+                foreach (char c in sentence.ToLower())
+                {
+                    if (char.IsLetter(c))
+                    {
+                        alphabetSet.Add(c);
+                    }
+                }
+                return alphabetSet.Count == 26; // Check if all 26 letters are present
+            }
+            return false; // Empty string cannot be a pangram
+        }
+
+        #endregion
+
         #region Get All Subtstrings
 
         /// <summary>
