@@ -2,6 +2,7 @@ using Algorithms;
 using Algo = Algorithms.Algorithms;
 using NUnit.Framework.Legacy;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace TestDSA
 {
@@ -200,6 +201,43 @@ namespace TestDSA
         {
             return Algo.GetAllSubstrings(word);            
         }
+        #endregion
+
+        #region Pangram unit test case scenarios
+
+        public static IEnumerable IsPangramTestCases
+        {
+            get
+            {
+                var cases = new List<TestCaseData>
+                {
+                    new TestCaseData("The quick brown fox jumps over the lazy dog", true).SetName("Classic Pangram"),
+                    new TestCaseData("Sphinx of black quartz, judge my vow", true).SetName("Pangram With Punctuation"),
+                    new TestCaseData("Pack my box with five dozen liquor jugs", true).SetName("AnotherClassicPangram"),
+                    new TestCaseData("The quick brown fox jumps over the dog", false).SetName("MissingLetters"),
+                    new TestCaseData("", false).SetName("EmptyStringIsNotPangram"),
+                    new TestCaseData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", true).SetName("AllUppercaseLetters"),
+                    new TestCaseData("abcdefghijklmnopqrstuvwxy", false).SetName("OneLetterMissing"),
+                    new TestCaseData("the quick brown fox jumps over the lazy dog 12345 !@#", true).SetName("PangramWithNumbersAndSymbols"),
+                    new TestCaseData("How vexingly quick daft zebras jump", true),
+                    new TestCaseData("The five boxing wizards jump quickly",true),
+                    new TestCaseData("Crazy Fredrick bought many very exquisite opal jewels",true),
+                    new TestCaseData("Mr. Jock, TV quiz PhD, bags few lynx", true)
+                };
+                return cases;
+            }
+        }
+
+        [Test, TestCaseSource(nameof(IsPangramTestCases))]
+        public void IsPangram_DetectsPangramCorrectly(string sentence, bool expected)
+        {
+            // Act
+            bool result = Algo.IsPangram(sentence);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
         #endregion
 
         #region Factors of number unit test case scenarios
