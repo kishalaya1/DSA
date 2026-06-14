@@ -15,14 +15,15 @@ functionMap.Add(3, CheckWordsBeingAnagrams);
 functionMap.Add(4, CheckWordBeingPalindrome);
 functionMap.Add(5, CheckWordBeingHeterogram);
 functionMap.Add(6, GetallSubstrings);
-functionMap.Add(7, DisplayFactors);
-functionMap.Add(8, DisplayHCF);
-functionMap.Add(9, DisplayLCM);
-functionMap.Add(10, CheckArmstrongNo);
-functionMap.Add(11, CheckValidLuhnNo);
-functionMap.Add(12, CheckIsPower);
+functionMap.Add(7, CheckSentenceBeingPangram);
+functionMap.Add(8, DisplayFactors);
+functionMap.Add(9, DisplayHCF);
+functionMap.Add(10, DisplayLCM);
+functionMap.Add(11, CheckArmstrongNo);
+functionMap.Add(12, CheckValidLuhnNo);
+functionMap.Add(13, CheckIsPower);
 
-string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "DisplayFactors", "DisplayHCF", "DisplayLCM", "CheckArmstrongNo", "CheckValidLuhnNo","CheckIsPower" };
+string[] FuncNames = { "None","BubbleSort", "RemoveDuplicateCharacters", "CheckWordsBeingAnagrams", "CheckWordBeingPalindrome", "CheckWordBeingHeterogram", "GetallSubstrings", "CheckSentenceBeingPangram", "DisplayFactors", "DisplayHCF", "DisplayLCM", "CheckArmstrongNo", "CheckValidLuhnNo","CheckIsPower" };
 Action[] selectedFuncs = {
     None,
     BubbleSort,
@@ -31,6 +32,7 @@ Action[] selectedFuncs = {
     CheckWordBeingPalindrome,
     CheckWordBeingHeterogram,
     GetallSubstrings,
+    CheckSentenceBeingPangram,
     DisplayFactors,
     DisplayHCF,
     DisplayLCM,
@@ -128,6 +130,15 @@ static void GetallSubstrings()
         Console.WriteLine(word);
     }
 
+    Console.ReadKey();
+}
+static void CheckSentenceBeingPangram()
+{
+    Console.WriteLine("executing demo function to check if a sentence is a pangram");
+    string sampleSentence = "The quick brown fox jumps over the lazy dog";
+    Console.WriteLine("Sample sentence : " + sampleSentence);
+    string isPangram = (Algo.IsPangram(sampleSentence)) ? "Yes" : "No";
+    Console.WriteLine("Is the given sentence a Pangram  ? : " + isPangram);
     Console.ReadKey();
 }
 static void DisplayFactors()

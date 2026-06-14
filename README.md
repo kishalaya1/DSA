@@ -7,11 +7,12 @@ The list of algorithms and problems are as follows:
 4. Check if a word is a palindrome 
 5. Check if a word has unique characters - Heterogram 
 6. Get all substrings from a word
-7. Generate all factors of a number 
-8. HCF(Highest common factor) of an array of numbers
-9. LCM(Least common multiple) of an array of numbers 
-10. Armstrong number 
-11. Check if a number is power of another number
+7. Check if a sentence uses every letter of the alphabet at least once - Pangram
+8. Generate all factors of a number 
+9. HCF(Highest common factor) of an array of numbers
+10. LCM(Least common multiple) of an array of numbers 
+11. Armstrong number 
+12. Check if a number is power of another number
 
 The list of special algortihms are as follows:
 
